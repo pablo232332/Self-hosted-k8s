@@ -142,7 +142,7 @@ Use a script to create a Kubernetes cluster with kubeadm.
 1.  Download the [create\_cluster](scripts/create_cluster.sh) on each node.
 
     ```bash
-    wget [](https://raw.githubusercontent.com/gurlal-1/devops-avenue/refs/heads/main/yt-videos/k8s-aws-load-balancer/scripts/create_cluster.sh)
+    wget [](/scripts/create_cluster.sh)
     ```
 2.  Change permissions for the script.
 
@@ -212,7 +212,7 @@ Use a script to create a Kubernetes cluster with kubeadm.
 
     ```bash
     mkdir -p $HOME/.kube
-    scp -i demo-devops-avenue-ue2.pem ec2-user@$MASTER_IP:/home/ec2-user/.kube/config $HOME/.kube/config
+    scp -i .pem ec2-user@$MASTER_IP:/home/ec2-user/.kube/config $HOME/.kube/config
     sudo chown $(id -u):$(id -g) $HOME/.kube/config
     ```
 
@@ -242,7 +242,7 @@ Use a script to create a Kubernetes cluster with kubeadm.
 
 1.  Download app [manifest](manifests/app.yaml)
 
-    `wget https://raw.githubusercontent.com/gurlal-1/devops-avenue/refs/heads/main/yt-videos/k8s-aws-load-balancer/manifests/app.yaml`
+    `wget/manifests/app.yaml`
 2.  Apply the manifest:
 
     `kubectl -f app.yaml`
