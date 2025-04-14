@@ -110,14 +110,11 @@ Resources created:
 1.  Copy the PEM key to the bastion host
 
     `scp -i <key for ssh> <pem key> ec2-user@<bastin_public_ip>:<dst_location>`
+    
+3.  (Optional) Copy tmux or other personalized config to the bastion host.
 
-    * Example: `scp -i demo-devops-avenue-ue2.pem demo-devops-avenue-ue2.pem ec2-user@$BASTION_IP:/home/ec2-user`
-2.  (Optional) Copy tmux or other personalized config to the bastion host.
+4.  Connect to the bastain host via SSH.
 
-    * Example: `scp -i demo-devops-avenue-ue2.pem ~/.tmux.conf ec2-user@$BASTION_IP:/home/ec2-user`
-3.  Connect to the bastain host via SSH.
-
-    * Example: `ssh -i demo-devops-avenue-ue2.pem ec2-user@$BASTION_IP`
 
     Install `tmux` and `git`:
 
@@ -126,14 +123,14 @@ Resources created:
     sudo hostnamectl set-hostname "bastian-node"
     sudo dnf install git tmux -y
     ```
-4.  Connect to each instance via SSH from th bastion host.
-5.  (Tip) Install tmux, export IPs into variables and create multiple sessions in tmux to connect to all instance at once.
+5.  Connect to each instance via SSH from th bastion host.
+6.  (Tip) Install tmux, export IPs into variables and create multiple sessions in tmux to connect to all instance at once.
 
-    `ssh -i demo-devops-avenue-ue2.pem ec2-user@<MASTER_IP>`
+    `ssh -i <>.pem ec2-user@<MASTER_IP>`
 
-    `ssh -i demo-devops-avenue-ue2.pem ec2-user@<WORKER1_IP>`
+    `ssh -i <>.pem ec2-user@<WORKER1_IP>`
 
-    `ssh -i demo-devops-avenue-ue2.pem ec2-user@<WORKER2_IP>`
+    `ssh -i <>.pem ec2-user@<WORKER2_IP>`
 
 ### Create Kubernetes Cluster
 
