@@ -124,13 +124,7 @@ Resources created:
     sudo dnf install git tmux -y
     ```
 5.  Connect to each instance via SSH from th bastion host.
-6.  (Tip) Install tmux, export IPs into variables and create multiple sessions in tmux to connect to all instance at once.
 
-    `ssh -i <>.pem ec2-user@<MASTER_IP>`
-
-    `ssh -i <>.pem ec2-user@<WORKER1_IP>`
-
-    `ssh -i <>.pem ec2-user@<WORKER2_IP>`
 
 ### Create Kubernetes Cluster
 
