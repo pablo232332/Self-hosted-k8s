@@ -78,7 +78,7 @@ This project sets up a self-hosted Kubernetes cluster on AWS EC2 instances using
 
 On all nodes (master and workers):
 
-```bash
+
 wget [] +x create_cluster.sh
 sudo ./create_cluster.sh
 ### Prerequisites
