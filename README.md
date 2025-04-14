@@ -142,7 +142,7 @@ Use a script to create a Kubernetes cluster with kubeadm.
 1.  Download the [create\_cluster](scripts/create_cluster.sh) on each node.
 
     ```bash
-    wget [https://raw.githubusercontent.com/gurlal-1/devops-avenue/refs/heads/main/yt-videos/k8s-aws-load-balancer/scripts/create_cluster.sh](https://raw.githubusercontent.com/gurlal-1/devops-avenue/refs/heads/main/yt-videos/k8s-aws-load-balancer/scripts/create_cluster.sh)
+    wget [](https://raw.githubusercontent.com/gurlal-1/devops-avenue/refs/heads/main/yt-videos/k8s-aws-load-balancer/scripts/create_cluster.sh)
     ```
 2.  Change permissions for the script.
 
@@ -168,9 +168,9 @@ Use a script to create a Kubernetes cluster with kubeadm.
     ```
 
     NOTE: Download and update `custom-resources.yaml` with a different CIDR IF NEEDED.
+
 6.  Join worker nodes to the cluster.
 
-    * Example: `kubeadm join 172.31.25.150:6443 --token 2i8vrs.wsshnhe5zf87rhhu --discovery-token-ca-cert-hash sha256:eacbaf01cc58203f3ddd69061db2ef8e64f450748aef5620ec04308eac44bd77`
 7.  Check nodes and calico status:
 
     ```
@@ -186,6 +186,10 @@ Use a script to create a Kubernetes cluster with kubeadm.
     ```
 
     Exit the nodes and return to the bastion host.
+
+
+
+
 
 ### Configure kubectl on Bastian Host
 
