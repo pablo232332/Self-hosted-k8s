@@ -30,7 +30,7 @@ This project sets up a self-hosted Kubernetes cluster on AWS EC2 instances using
 1.  Navigate to the Terraform directory:
 
     ```bash
-    cd tf-resources
+    cd resources
     ```
 
 2.  Review & update variables:
