@@ -79,7 +79,7 @@ This project sets up a self-hosted Kubernetes cluster on AWS EC2 instances using
 On all nodes (master and workers):
 
 
-wget [] +x create_cluster.sh
+wget https://github.com/pablo232332/Self-hosted-k8s.git +x create_cluster.sh
 sudo ./create_cluster.sh
 ### Prerequisites
 
@@ -133,7 +133,7 @@ Use a script to create a Kubernetes cluster with kubeadm.
 1.  Download the [create\_cluster](scripts/create_cluster.sh) on each node.
 
     ```bash
-    wget [](/scripts/create_cluster.sh)
+    wget https://github.com/pablo232332/Self-hosted-k8s.git/scripts/create_cluster.sh
     ```
 2.  Change permissions for the script.
 
@@ -233,7 +233,7 @@ Use a script to create a Kubernetes cluster with kubeadm.
 
 1.  Download app [manifest](manifests/app.yaml)
 
-    `wget/manifests/app.yaml`
+    `wget https://github.com/pablo232332/Self-hosted-k8s.git/manifests/app.yaml`
 2.  Apply the manifest:
 
     `kubectl -f app.yaml`
@@ -263,7 +263,7 @@ Assumption: You have a domain.
     * Example: `kubectl patch node worker1 -p '{"spec":{"providerID":"aws:///us-east-2/i-012373091f38897a1"}}'`
 2.  Download the Ingress manifest [here](manifests/ingress.yaml)
 
-    `wget https://raw.githubusercontent.com/gurlal-1/devops-avenue/refs/heads/main/yt-videos/k8s-aws-load-balancer/manifests/ingress.yaml`
+    `wget https://github.com/pablo232332/Self-hosted-k8s/manifests/ingress.yaml`
 3.  Apply the Ingress manifest:
 
     `kubectl create -f ingress.yaml`
