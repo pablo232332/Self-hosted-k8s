@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: blog-app
-          image: devopsavenue/blog-app:v1
+          image: pawel/blog-app:v1
           imagePullPolicy: Always
           ports:
           - containerPort: 5001
@@ -61,7 +61,7 @@ spec:
     spec:
       containers:
       - name: login-app
-        image: devopsavenue/loginapp:v1
+        image: pawel/loginapp:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 5002
@@ -69,7 +69,9 @@ spec:
            - name: BASE_URL
              valueFrom:
               configMapKeyRef:
-                name: app-urls
+        
+
+name: app-urls
                 key: BASE_URL
 ---
 apiVersion: v1
