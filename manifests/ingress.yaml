@@ -7,7 +7,7 @@ metadata:
         alb.ingress.kubernetes.io/load-balancer-name: blog-app-alb
         alb.ingress.kubernetes.io/scheme: internet-facing
         alb.ingress.kubernetes.io/target-type: instance
-        alb.ingress.kubernetes.io/tags: app=blog, devops-demo=true
+        alb.ingress.kubernetes.io/tags: app=blog, devops_dem=true
 spec:
   ingressClassName: alb
   rules:
