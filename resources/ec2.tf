@@ -14,16 +14,16 @@ data "aws_ami" "latest_ami" {
 }
 
 # control plane
-resource "aws_instance" "k8s-aws-alb-master-node" {
+resource "aws_instance" "demo-k8s-aws-alb-master-node" {
   ami           = data.aws_ami.latest_ami.id
   instance_type = var.cluster_node_type
-  iam_instance_profile = aws_iam_instance_profile.k8s-aws-alb-iam-profile.name
+  iam_instance_profile = aws_iam_instance_profile.demo-k8s-aws-alb-iam-profile.name
   source_dest_check = false
   key_name      = var.key_pair
   vpc_security_group_ids = [
-    aws_security_group.k8s-aws-alb-sg.id
+    aws_security_group.demo-k8s-aws-alb-sg.id
   ]
-  subnet_id = module.k8s-aws-alb-vpc.private_subnets[0]
+  subnet_id = module.demo-k8s-aws-alb-vpc.private_subnets[0]
   root_block_device {
     volume_size = var.volume_size
   }
@@ -33,17 +33,17 @@ resource "aws_instance" "k8s-aws-alb-master-node" {
 }
 
 #worker nodes
-resource "aws_instance" "k8s-aws-alb-worker-node" {
+resource "aws_instance" "demo-k8s-aws-alb-worker-node" {
   for_each      = toset(var.worker_nodes_names)
   ami           = data.aws_ami.latest_ami.id
-  iam_instance_profile = aws_iam_instance_profile.k8s-aws-alb-iam-profile.name
+  iam_instance_profile = aws_iam_instance_profile.demo-k8s-aws-alb-iam-profile.name
   source_dest_check = false
   instance_type = var.cluster_node_type
   key_name      = var.key_pair
   vpc_security_group_ids = [
-    aws_security_group.k8s-aws-alb-sg.id
+    aws_security_group.demo-k8s-aws-alb-sg.id
   ]
-  subnet_id = module.k8s-aws-alb-vpc.private_subnets[1]
+  subnet_id = module.demo-k8s-aws-alb-vpc.private_subnets[1]
   root_block_device {
     volume_size = var.volume_size
   }
