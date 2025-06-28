@@ -36,7 +36,7 @@ variable "bastian_host_name" {
 #provide your key name
 variable "key_pair" {
   description = "The name of the key pair to use for EC2 instances"
-  default = "your key-pair"
+  default = "my key-pair"
   type        = string
 }
 
