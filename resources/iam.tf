@@ -4,7 +4,7 @@ resource "aws_iam_instance_profile" "demo-k8s-aws-alb-iam-profile" {
 }
 
 resource "aws_iam_role" "demo-k8s-aws-alb-role" {
-  name = "k8s-aws-alb-role"
+  name = "demo-k8s-aws-alb-role"
 
   assume_role_policy = jsonencode({
     Statement = [{
@@ -19,13 +19,13 @@ resource "aws_iam_role" "demo-k8s-aws-alb-role" {
 }
 
 resource "aws_iam_role_policy_attachment" "aws-lb-policy" {
-  policy_arn = aws_iam_policy.k8s-aws-alb-custom-policy.arn
+  policy_arn = aws_iam_policy.demo-k8s-aws-alb-custom-policy.arn
   role       = aws_iam_role.demo-k8s-aws-alb-role.name
 }
 
 #custom policy for aws-lb
-resource "aws_iam_policy" "k8s-aws-alb-custom-policy" {
-  name = "k8s-aws-alb-custom-policy"
+resource "aws_iam_policy" "demo-k8s-aws-alb-custom-policy" {
+  name = "demo-k8s-aws-alb-custom-policy"
   description = "Policy used by aws-lb controller to create lb resources"
   policy = jsonencode(
       {
